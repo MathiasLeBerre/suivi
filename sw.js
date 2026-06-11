@@ -1,6 +1,6 @@
 // Service worker — Mon carnet
 // Incrémente la version pour forcer la mise à jour du cache après un déploiement.
-const CACHE = 'carnet-v1';
+const CACHE = 'carnet-v2';
 const ASSETS = [
   './',
   './index.html',
