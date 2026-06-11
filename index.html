@@ -45,19 +45,26 @@
   .summary::before{content:"";position:absolute;top:-60px;right:-50px;width:160px;height:160px;border-radius:50%;background:var(--sage-bg);opacity:.7}
   .summary-inner{position:relative;display:flex;align-items:center;gap:22px}
   .ring{position:relative;width:128px;height:128px;flex:0 0 auto}
-  .ring svg{transform:rotate(-90deg)}
+  .ring svg{transform:rotate(-90deg);width:100%;height:100%}
   .ring .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
   .ring .ctr b{font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1;font-family:var(--serif)}
   .ring .ctr span{font-size:11px;color:var(--ink-faint);margin-top:4px;letter-spacing:.02em}
   .sum-side{flex:1;min-width:0}
   .sum-side .lead{font-size:18px;font-weight:600;letter-spacing:-.01em}
   .sum-side .lead small{display:block;font-size:13px;color:var(--ink-soft);font-weight:400;margin-top:3px}
-  .chips{display:flex;gap:8px;margin-top:14px}
-  .chip{flex:1;background:var(--surface-2);border-radius:var(--r-sm);padding:9px 10px;text-align:center}
+  .chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .chip{flex:1 1 0;min-width:64px;background:var(--surface-2);border-radius:var(--r-sm);padding:9px 6px;text-align:center}
   .chip b{display:block;font-size:16px;font-weight:600}
-  .chip span{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em}
+  .chip span{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.02em}
   .chip.liquid b{color:var(--sky-deep)}
   .chip.move b{color:var(--apricot-deep)}
+  /* Sur écran étroit : anneau plus compact, pastilles qui s'enroulent proprement */
+  @media (max-width:560px){
+    .summary-inner{gap:16px}
+    .ring{width:108px;height:108px}
+    .sum-side{flex:1 1 0;min-width:0}
+    .chip{min-width:62px}
+  }
 
   .home-flag{margin-top:14px;border-radius:var(--r-md);padding:13px 16px;font-size:13.5px;display:none;align-items:center;gap:9px}
   .home-flag.show{display:flex}
